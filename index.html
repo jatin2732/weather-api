@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weatherw api </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <!-- <a class="navbar-brand">Navbar</a> -->
+            <img src="./images/reshot-icon-weather-VAUPX2QFJK.svg" class="navbar-img" alt="">
+            <form class="d-flex" role="search">
+                <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary" type="submit" id="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="cards">
+        <h1 class="text-center my-4">Wheather Condition of <span id="cityName"></span></h1>
+        <div class="row g-4 py-5 row-cols-1 row-cols-lg-3 ">
+            <div class="feature col card border-info">
+                <div
+                    class="feature-icon d-inline-flex align-items-center justify-content-left my-2 bg-gradient fs-5 mb-3">
+                    <img src="./images/reshot-icon-weather-EJPNZMV8U5.svg" width="50px" height="50px" alt="">
+                    <h3 class="fs-2  mx-4">General Wheather Info</h3>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Cloud-Pct : <span id="cloud_pct"></span></li>
+                    <li class="list-group-item">Humidity : <span id="humidity"></span></li>
+                    <li class="list-group-item">Sunrise : <span id="sunrise"></span></li>
+                    <li class="list-group-item">Sunset : <span id="sunset"></span></li>
+                </ul>
+
+            </div>
+            <div class="feature col card border-info">
+                <div
+                    class="feature-icon d-inline-flex align-items-center justify-content-left my-2 bg-gradient fs-5 mb-3">
+                    <img src="./images/reshot-icon-temperature-HPDZQC3L2J.svg" width="50px" height="50px" alt="">
+                </div>
+                <h3 class="fs-2">Temperature Info</h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Temp : <span id="temp"></span></li>
+                    <li class="list-group-item">Feels_like : <span id="feels_like"></span></li>
+                    <li class="list-group-item">Min_Temp : <span id="min_temp"></span></li>
+                    <li class="list-group-item">Max_Temp : <span id="max_temp"></span></li>
+                </ul>
+            </div>
+            <div class="feature col card border-info">
+                <div
+                    class="feature-icon d-inline-flex align-items-center justify-content-left my-2 bg-gradient fs-2 mb-3">
+                    <img src="./images/reshot-icon-wind-N26SPX7HZM.svg" width="50px" height="50px" alt="">
+                </div>
+                <h3 class="fs-2">Wind-related Info</h3>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Wind_Speed : <span id="wind_speed"></span></li>
+                    <li class="list-group-item">Wind-Degree : <span id="wind_degrees"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <h2>Wheather of Some Famous Cities</h2>
+        <table class="table text-center">
+            <thead>
+                <tr>
+                    <th style="width: 10%;"></th>
+                    <th style="width: 9%;">Humidity</th>
+                    <th style="width: 9%;">Cloud-Pct</th>
+                    <th style="width: 9%;">Feels-Like</th>
+                    <th style="width: 9%;">Max-Temp</th>
+                    <th style="width: 9%;">Min-Temp</th>
+                    <th style="width: 9%;">Sunrise</th>
+                    <th style="width: 9%;">Sunset</th>
+                    <th style="width: 9%;">Temp.</th>
+                    <th style="width: 9%;">Wind-Degree</th>
+                    <th style="width: 9%;">Wind-Speed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="text-start">Delhi</th>
+                    <td><span id="delhi_humidity"></span></td>
+                    <td><span id="delhi_cloud_pct"></span></td>
+                    <td><span id="delhi_feels_like"></span></td>
+                    <td><span id="delhi_max_temp"></span></td>
+                    <td><span id="delhi_min_temp"></span></td>
+                    <td><span id="delhi_sunrise"></span></td>
+                    <td><span id="delhi_sunset"></span></td>
+                    <td><span id="delhi_temp"></span></td>
+                    <td><span id="delhi_wind_degrees"></span></td>
+                    <td><span id="delhi_wind_speed"></span></td>
+
+                </tr>
+                <tr>
+                    <th scope="row" class="text-start">New York</th>
+                    <td><span id="york_humidity"></span></td>
+                    <td><span id="york_cloud_pct"></span></td>
+                    <td><span id="york_feels_like"></span></td>
+                    <td><span id="york_max_temp"></span></td>
+                    <td><span id="york_min_temp"></span></td>
+                    <td><span id="york_sunrise"></span></td>
+                    <td><span id="york_sunset"></span></td>
+                    <td><span id="york_temp"></span></td>
+                    <td><span id="york_wind_degrees"></span></td>
+                    <td><span id="york_wind_speed"></span></td>
+                </tr>
+            </tbody>
+
+            <tbody>
+                <tr>
+                    <th scope="row" class="text-start">Tokyo</th>
+                    <td><span id="tokyo_humidity"></span></td>
+                    <td><span id="tokyo_cloud_pct"></span></td>
+                    <td><span id="tokyo_feels_like"></span></td>
+                    <td><span id="tokyo_max_temp"></span></td>
+                    <td><span id="tokyo_min_temp"></span></td>
+                    <td><span id="tokyo_sunrise"></span></td>
+                    <td><span id="tokyo_sunset"></span></td>
+                    <td><span id="tokyo_temp"></span></td>
+                    <td><span id="tokyo_wind_degrees"></span></td>
+                    <td><span id="tokyo_wind_speed"></span></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="text-start">Beijing</th>
+                    <td><span id="beijing_humidity"></span></td>
+                    <td><span id="beijing_cloud_pct"></span></td>
+                    <td><span id="beijing_feels_like"></span></td>
+                    <td><span id="beijing_max_temp"></span></td>
+                    <td><span id="beijing_min_temp"></span></td>
+                    <td><span id="beijing_sunrise"></span></td>
+                    <td><span id="beijing_sunset"></span></td>
+                    <td><span id="beijing_temp"></span></td>
+                    <td><span id="beijing_wind_degrees"></span></td>
+                    <td><span id="beijing_wind_speed"></span></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="text-start">Paris</th>
+                    <td><span id="Paris_humidity"></span></td>
+                    <td><span id="Paris_cloud_pct"></span></td>
+                    <td><span id="Paris_feels_like"></span></td>
+                    <td><span id="Paris_max_temp"></span></td>
+                    <td><span id="Paris_min_temp"></span></td>
+                    <td><span id="Paris_sunrise"></span></td>
+                    <td><span id="Paris_sunset"></span></td>
+                    <td><span id="Paris_temp"></span></td>
+                    <td><span id="Paris_wind_degrees"></span></td>
+                    <td><span id="Paris_wind_speed"></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+
+    <script src="./index.js"></script>
+
+</body>
+
+</html>
